@@ -331,7 +331,7 @@ ul#stages{
 	padding:none;
 	margin:0;
 }
-li.selected > img {
+li.stage-selected > img {
     border:1px solid blue;
 }
 
