@@ -27,19 +27,53 @@ function closeStageDialog() {
 function drawStage() {
 	//check if there is something selected
 	if(!$('.stage-selected').length > 0){
-		// alert("")
 		$('#stageHelper').css("display", "inline");
 	}
 	else{
-		// console.log($('.stage-selected').attr('id'));
 		var stage = $('.stage-selected').attr('id');
-
 		closeStageDialog();
+		drawStageShape(stage);
 	}
 	
 	};
 
+function drawStageShape(stage){
+	switch(stage){
+		case 'rectangle':
+			drawRectangleStage();
+			break;
+		case 'semicircle':
+			drawSemiCircleStage();
+			break;
+	}
+}
 
-(function(){
-    
-})();
+function drawRectangleStage(){
+	var canvas = document.getElementById('canvas-stage');
+	var ctxt = canvas.getContext('2d');
+	ctxt.clearRect(0, 0, canvas.width, canvas.height);
+	ctxt.beginPath();
+	ctxt.rect(.5, .5, canvas.width-1, canvas.height-1);
+	ctxt.fillStyle = 'white';
+	ctxt.fill();
+	ctxt.lineWidth = 1;
+	ctxt.strokeStyle = 'gray';
+	ctxt.stroke(); 
+}
+function drawSemiCircleStage(){
+	var canvas = document.getElementById('canvas-stage');
+	var ctxt = canvas.getContext('2d');
+	ctxt.clearRect(0, 0, canvas.width, canvas.height);
+	ctxt.beginPath();
+	var x = canvas.width/2+.5;
+	var y = 1.5;
+	var radius = canvas.height-2.5;
+	var startAngle = 0; endAngle = Math.PI;
+	ctxt.arc(x,y,radius, startAngle,endAngle);
+	ctxt.closePath();
+	ctxt.lineWidth = 1;
+	ctxt.fillStyle = 'white';
+	ctxt.fill();
+	ctxt.strokeStyle = 'gray';
+	ctxt.stroke();
+}
