@@ -6,6 +6,8 @@ body{
 
 }
 
+/***** general tag formatting *****/
+
 a, a:visited{
 	text-decoration: none; 
 	outline: none;
@@ -17,7 +19,7 @@ a:hover, a:visited{
 }
 
 
-img{
+img.img-nav{
 	margin-top: -5px;
 	padding-right: 5px;
 	width:15px;
@@ -32,17 +34,17 @@ label{
 	clear:both;
 }
 
-/*
- * Main table-layout
- */
+/***** outer wrapper layout *****/
 #outerWrapper {
 	width: 100%;
 	padding-top: 19px;
 }
 
+
+/***** top bar ******/
 #topnavWrapper {
 	height: 38px;
-	/*background-color: gray;*/
+	
 }
 
 #topnav {
@@ -51,7 +53,7 @@ label{
 	padding-top: 9px;
 	font-size: 12px;
 }
-/*#topnav a { color: #949596; }*/
+
 #topnav a:hover { 
 	color: black;
 	text-decoration: none 
@@ -77,14 +79,15 @@ ul#topNavAccount li, ul#stages li {
 	padding: 0px 0px 0px 8px ;
 	border-left: 1px #434343 solid;
 }
-ul#stages li{
-	border:none;
-}
+
 
 ul#topNavAccount li.first {
 	border: none;
 	margin: 0px 0px 0px 5px;
 }
+
+
+/****************** body ********************/
 
 #wrapper {
 	width: 960px;
@@ -99,6 +102,9 @@ h1 a {
 	/*color: #d6d7d7;*/
 /*	float: left;*/
 }
+
+
+/******** body header and top bar **********/
 
 #subHeader {
 	width: 960px;
@@ -121,15 +127,14 @@ h1 a {
 	font-weight: normal;
 }
 
-/*#pageTitle h1 a { color: #fff; }*/
-/*#pageTitle h1 a:hover { color: #ccc; }*/
+a#projectName:hover{
+	background-color: #E6E6E6;
+	color:black;
+}
 
 
 
-
-/*
- * Page Actions nav
- */
+/***** top bar of actions ******/ 
 #pageActionsNav {
 	float: right;
 	margin: 5px 0 0 0;
@@ -140,23 +145,16 @@ h1 a {
 
 #pageActionsNav a {
 	float: left;
-	/*background-image: url('../images/sprite2.png');*/
-	/*background-repeat: no-repeat;*/
 	width: 118px;
-	/*height: 100%;*/
 	display: block;
-	/*text-indent: -9999px;*/
-/*	border: 1px solid gray;
-	-webkit-border-top-left-radius: 20px;
-	-webkit-border-top-right-radius: 20px;
-	-moz-border-radius-topleft: 20px;
-	-moz-border-radius-topright: 20px;
-	border-top-left-radius: 20px;
-	border-top-right-radius: 20px;
-	border-bottom: none;*/
 }
 
-#pageActionsNav li { float: left; }
+#pageActionsNav li { 
+	float: left; 
+}
+
+
+/********** content *************/
 
 #content {
 	background: #fff;
@@ -166,8 +164,11 @@ h1 a {
 	display: table-row;
 }
 
+
+
+/**** sidebar *****/ 
 #sidebarActions{
-	/*display: table-cell;*/
+
 	width:130px;
 	height:500px;
 	float: left;
@@ -179,6 +180,10 @@ h1 a {
 	box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    -webkit-box-shadow: -1px 3px 8px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow:    -1px 3px 8px rgba(0, 0, 0, 0.3);
+    box-shadow:         4px 3px 5px -3px rgba(0, 0, 0, 0.3);
+
 }
 
 #sidebarActions a {
@@ -213,6 +218,10 @@ h1 a {
 label#commentsLabel{
 	line-height: 40px;
 }
+
+
+
+/*************** canvas *********************/
  
 #canvasWrapper {
 	float: left;
@@ -248,6 +257,7 @@ label#audienceLabel{
 	bottom:0px;
 	left:48%;
 }
+
 
 label#stageLeftLabel{
 	position: absolute;
@@ -304,32 +314,47 @@ label#stageRightLabel{
 }
 
 #delete-container {
-	background-color: white;
-    display: block;
+	/*background-color: white;*/
     position:absolute;
     bottom:0px;
     right: 0px;
-    border: 1px solid #b7b9bd;
+    /*border: 1px solid #b7b9bd;*/
     border-bottom: none;
     border-right:none;
-    height:75px;
-    width:75px;
-    line-height: 75px;
+    height:50px;
+    width:60px;
+    /*line-height: 75px;*/
     text-align: center;
     font-size: 15px;
+    background:transparent url('../img/trash-close.png') center top no-repeat;
 }
 
-a#delete-container:hover{
+#delete-container:hover{
+	background:transparent url('../img/trash-open.png') center top no-repeat;
+}
+
+/*#delete-container a{
+	display: block;
+	height: 100%;
+	width: 100%;
+}*/
+
+/*#delete-container a:hover{
 	background-color:#e5e2e2;
 	color:black;
 
-	}
-/*
- * Modal: choose stage
-  */
+	}*/
+
+
+
+/**************** modal form for stages *****************/
 ul#stages{
 	padding:none;
 	margin:0;
+}
+
+ul#stages li{
+	border:none;
 }
 li.stage-selected > img {
     border:1px solid blue;

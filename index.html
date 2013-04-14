@@ -19,12 +19,12 @@
 		</div>
 		<div id="wrapper">
 			<div id="subHeader">
-				<div id="pageTitle"><h1><a id="projectName">Project Name</a></h1></div>
+				<div id="pageTitle"><h1><a id="projectName" data-toggle="tooltip" title="Double click to change">Project Name</a></h1></div>
 				<ul id="pageActionsNav">
-					<li><a id="addFormation"><img src="img/plus_blue.png" /> New</a></li>
-					<li><a id="undo"><img src="img/arrow_undo.png"/> Undo</a></li>
-					<li><a id="redo"><img src="img/arrow_redo.png" /> Redo</a></li>
-					<li><a id="save"><img src="img/save.png"/> Save</a></li>
+					<li><a id="addFormation"><img src="img/plus_blue.png" class="img-nav"/> New</a></li>
+					<li><a id="undo"><img src="img/arrow_undo.png" class="img-nav"/> Undo</a></li>
+					<li><a id="redo"><img src="img/arrow_redo.png" class="img-nav" /> Redo</a></li>
+					<li><a id="save"><img src="img/save.png" class="img-nav"/> Save</a></li>
 				</ul>
 				<div class="break"></div>
 			</div>
@@ -44,7 +44,7 @@
 						<canvas id="canvas-stage"><p>Your browser does not support HTML5 canvas</canvas>
 
 					</div>
-					<a id="delete-container" class="content">Delete</a>
+					<div id="delete-container" class="content"><a></a></div>
 					<!-- <div id="preview"><label>Preview</label></div> -->
 				</div>
 			</div>
@@ -90,8 +90,12 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/javascript.js"></script>
 	<script>
+	var debug = true;
 	(function(){
+		if(!debug){
 		$('#chooseStage').modal();
+	}
+		$('#projectName').tooltip();
 	})();
 	
 	</script>
