@@ -69,13 +69,16 @@ ul#topNavAccount {
 	display: inline;
 }
 
-ul#topNavAccount li {
+ul#topNavAccount li, ul#stages li {
 	display: inline-block;
 	list-style: none;
 	float: left;
 	margin: 0px 0px 0px 8px;
 	padding: 0px 0px 0px 8px ;
 	border-left: 1px #434343 solid;
+}
+ul#stages li{
+	border:none;
 }
 
 ul#topNavAccount li.first {
@@ -321,3 +324,25 @@ a#delete-container:hover{
 	color:black;
 
 	}
+/*
+ * Modal: choose stage
+  */
+ul#stages{
+	padding:none;
+	margin:0;
+}
+li.selected > img {
+    border:1px solid blue;
+}
+
+#stages li {
+    display: inline-block;
+    cursor: pointer;
+}
+
+#stages img {
+    padding: 3px;
+    width:130px;
+    height:130px;
+    box-sizing:border-box;
+}
