@@ -60,13 +60,14 @@
 	  <div class="modal-body">
 	    <!-- <button id="stage1" class="btn">Stage 1</button> -->
 	    <ul id="stages">
-		    <li><img  alt="rectangle stage" /></li>
-		    <li><img  alt="semicircle stage" /></li>
+		    <li id="rectangle"><img  alt="rectangle stage" /></li>
+		    <li id="semicircle"><img  alt="semicircle stage" /></li>
 		</ul>
 	  </div>
 	   <div class="modal-footer">
-	  	<button class="btn btn-primary pull-left">Ok</button>
-	    <button class="btn pull-left" data-dismiss="modal" aria-hidden="true">Cancel</button>
+	   	<p id="stageHelper" style="display:none;color:red" class="pull-left">Please select a stage.</p>
+	  	<button class="btn btn-primary" onclick="drawStage()">Ok</button>
+	    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
 	    
 	  </div>
 	</div>
