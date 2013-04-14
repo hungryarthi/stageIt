@@ -30,6 +30,14 @@ label{
 	font-size: 13px;
 }
 
+table, tr, td, th{
+	padding: 0;
+}
+
+td, th{
+	vertical-align: middle;
+}
+
 .break{
 	clear:both;
 }
@@ -173,7 +181,7 @@ a#projectName:hover{
 	height:500px;
 	float: left;
 	font-size: 12px;
-	line-height: 18px;
+	/*line-height: 18px;*/
 	color: #333333;
 	position: relative;
 	border:1px solid gray;
@@ -186,25 +194,49 @@ a#projectName:hover{
 
 }
 
-#sidebarActions a {
-	display:block;
+div#tasks-container{
+	width: 100%;
+	height:138px;
+	overflow: scroll;
+	border-bottom:1px solid black;
+	border-top: 1px solid black;
+}
+
+div#formations-container{
 	width:100%;
-	height:60px;
-	line-height:60px;
-	margin-top: auto;
-	margin-bottom: auto;
-	vertical-align: middle;
-	text-align: center;
-	border-bottom:1px solid #b8b7b7;
-	/*padding: 15px;*/
-	/*line-height: 100%;*/
+	height:130px;
+	overflow: scroll;
+	border-bottom:1px solid black;
+	border-top:1px solid black;
+}
+
+table#tasks, table#formations{
+	width:100%;
+}
+
+
+table#tasks tr, table#tasks td{
+	height: 40px;
+	border-bottom:1px solid #EAEAEA;
 	box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    line-height: 40px;
+}
+
+
+
+
+#sidebarActions a {
+	display:block;
+	width:100%;
+	height:100%;
+
 }
 
 #sidebarActions label{
-	line-height:60px;
+	line-height: 40px;
+	padding-left:5px;
 }
 
 #sidebarActions a:hover{
@@ -354,19 +386,19 @@ ul#stages{
 	margin:0;
 }
 
-ul#stages li{
+ul#stages li, ul#props li{
 	border:none;
 }
-li.stage-selected > img {
+li.stage-selected > img, li.prop-selected > img {
     border:1px solid blue;
 }
 
-#stages li {
+#stages li, #props li {
     display: inline-block;
     cursor: pointer;
 }
 
-#stages img {
+#stages img , #props img{
     padding: 3px;
     width:130px;
     height:130px;
