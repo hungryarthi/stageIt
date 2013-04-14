@@ -5,6 +5,7 @@
 	<title>StageIt</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css" />
 	<link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
 </head>
 <body>
 	<div id="outerWrapper">
@@ -51,7 +52,7 @@
 		</div>
 	</div>
 
-		<!-- Stage Modal -->
+	<!-- Stage Modal -->
 	<div id="chooseStage" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="chooseStageLabel" aria-hidden="false">
 	  <div class="modal-header">
 	    <button type="button" class="close" data-dismiss="modal" aria-hidden="false">&times;</button>
@@ -66,25 +67,77 @@
 	    
 	  </div>
 	</div>
+
 	<!-- AddDancers modal -->
 	<div id="addDancersModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="addDancersLabel" aria-hidden="false">
 	  <div class="modal-header">
 	    <button type="button" class="close" data-dismiss="modal" aria-hidden="false">&times;</button>
 	    <h4 id="addDancersLabel">Add Dancers</h4>
 	  </div>
+
+
+
+
 	  <div class="modal-body">
 	    <p>Some stuff here</p>
+ 
+		<p>
+		  <img src="img/Ohms2012.png"/>
+		  <label for="spinner">Select a valu:</label>
+		  <input id="spinner" name="value" width="6000px" />
+		</p>
+
+		<p>
+		  <button id="disable">Toggle disable/enable</button>
+		  <button id="destroy">Toggle widget</button>
+		</p>
 	  </div>
+
+
+
+
 	   <div class="modal-footer">
 	  	<button class="btn btn-primary">Add</button>
 	    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
 	    
 	  </div>
 	</div>
+
 	<script src="js/jquery-1.9.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/javascript.js"></script>
+
+  <!--script src="http://code.jquery.com/jquery-1.9.1.js"></script-->
+  <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 	<script>
+
+		$(function() {
+	    var spinner = $( "#spinner" ).spinner();
+	 
+	    $( "#disable" ).click(function() {
+	    	console.log("disable clicked");
+	      if ( spinner.spinner( "option", "disabled" ) ) {
+	        spinner.spinner( "enable" );
+	      } else {
+	        spinner.spinner( "disable" );
+	      }
+	    });
+	    $( "#destroy" ).click(function() {
+	    	console.log("toggle widget clicked");
+	      if ( spinner.data( "ui-spinner" ) ) {
+	        spinner.spinner( "destroy" );
+	      } else {
+	        spinner.spinner();
+	      }
+	    });
+	    // $( "#getvalue" ).click(function() {
+	    //   alert( spinner.spinner( "value" ) );
+	    // });
+	 
+	    $( "button" ).button();
+	  });
+
 	</script>
+ 
 </body>
 </html>
