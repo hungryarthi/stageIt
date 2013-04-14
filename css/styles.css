@@ -1,0 +1,374 @@
+body{
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Lucida Grande', Verdana, Arial, sans-serif;
+	color:black;
+
+}
+
+/***** general tag formatting *****/
+
+a, a:visited{
+	text-decoration: none; 
+	outline: none;
+	color:black;
+	cursor:point;
+}
+a:hover, a:visited{
+	text-decoration: none;
+}
+
+
+img.img-nav{
+	margin-top: -5px;
+	padding-right: 5px;
+	width:15px;
+}
+
+label{
+	pointer-events:none;
+	font-size: 13px;
+}
+
+.break{
+	clear:both;
+}
+
+/***** outer wrapper layout *****/
+#outerWrapper {
+	width: 100%;
+	padding-top: 19px;
+}
+
+
+/***** top bar ******/
+#topnavWrapper {
+	height: 38px;
+	
+}
+
+#topnav {
+	width: 960px;
+	margin: 0 auto;
+	padding-top: 9px;
+	font-size: 12px;
+}
+
+#topnav a:hover { 
+	color: black;
+	text-decoration: none 
+}
+
+#stageItLogo{
+	float:left;
+	margin:0;
+	margin-top: -20px;
+}
+
+ul#topNavAccount {
+	margin: 0px;
+	padding: 0px;
+	display: inline;
+}
+
+ul#topNavAccount li, ul#stages li {
+	display: inline-block;
+	list-style: none;
+	float: left;
+	margin: 0px 0px 0px 8px;
+	padding: 0px 0px 0px 8px ;
+	border-left: 1px #434343 solid;
+}
+
+
+ul#topNavAccount li.first {
+	border: none;
+	margin: 0px 0px 0px 5px;
+}
+
+
+/****************** body ********************/
+
+#wrapper {
+	width: 960px;
+	margin: 40px auto 0 auto;
+}
+
+h1 a {
+	font-size: 14px;
+/*	font-weight: bold;*/
+	margin: 0px;
+	padding: 0px;
+	/*color: #d6d7d7;*/
+/*	float: left;*/
+}
+
+
+/******** body header and top bar **********/
+
+#subHeader {
+	width: 960px;
+	position: relative;
+	min-height: 32px;
+}
+
+#pageTitle {
+	margin: 5px 0 0 0;
+	float: left;
+	width: 440px;
+	position: absolute;
+	bottom: 5px;
+}
+#pageTitle h1 {
+	/*color: #fff;*/
+	font-size: 14px;
+	margin: 0;
+	line-height: 20px;
+	font-weight: normal;
+}
+
+a#projectName:hover{
+	background-color: #E6E6E6;
+	color:black;
+}
+
+
+
+/***** top bar of actions ******/ 
+#pageActionsNav {
+	float: right;
+	margin: 5px 0 0 0;
+	padding: 0px;
+	list-style: none;
+	width: 480px;
+}
+
+#pageActionsNav a {
+	float: left;
+	width: 118px;
+	display: block;
+}
+
+#pageActionsNav li { 
+	float: left; 
+}
+
+
+/********** content *************/
+
+#content {
+	background: #fff;
+	width: 960px;
+	position: relative;
+	min-height: 400px;
+	display: table-row;
+}
+
+
+
+/**** sidebar *****/ 
+#sidebarActions{
+
+	width:130px;
+	height:500px;
+	float: left;
+	font-size: 12px;
+	line-height: 18px;
+	color: #333333;
+	position: relative;
+	border:1px solid gray;
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -webkit-box-shadow: -1px 3px 8px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow:    -1px 3px 8px rgba(0, 0, 0, 0.3);
+    box-shadow:         4px 3px 5px -3px rgba(0, 0, 0, 0.3);
+
+}
+
+#sidebarActions a {
+	display:block;
+	width:100%;
+	height:60px;
+	line-height:60px;
+	margin-top: auto;
+	margin-bottom: auto;
+	vertical-align: middle;
+	text-align: center;
+	border-bottom:1px solid #b8b7b7;
+	/*padding: 15px;*/
+	/*line-height: 100%;*/
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+#sidebarActions label{
+	line-height:60px;
+}
+
+#sidebarActions a:hover{
+    background-color:#e5e2e2;
+    color:black;
+}
+
+#comments{
+	text-align: center;
+}
+label#commentsLabel{
+	line-height: 40px;
+}
+
+
+
+/*************** canvas *********************/
+ 
+#canvasWrapper {
+	float: left;
+	width: 830px;
+	color: #333333;
+	/*margin: 15px 0 30px 0;*/
+	height: 500px;
+	border:1px solid gray;
+	border-left: none;
+	box-sizing:border-box;
+	position: relative;
+}
+
+#canvas-container{
+	background-color:rgba(0, 0, 0, .2);
+	width:100%;
+	height:100%;
+	text-align: center;
+}
+
+#canvas-stage{
+	width:660px;
+	height:400px; 
+	margin-top: 10px;
+	/*background-color: inherit;*/
+	/*background-color: white;*/
+	/*width:90%;*/
+
+}
+
+label#audienceLabel{
+	position:absolute;
+	bottom:0px;
+	left:48%;
+	font-weight: bold;
+}
+
+
+label#stageLeftLabel{
+	position: absolute;
+	margin: 0;
+	right:-10px;
+	top:45%;
+	/* Safari */
+	-webkit-transform: rotate(-90deg);
+
+	/* Firefox */
+	-moz-transform: rotate(-90deg);
+
+	/* IE */
+	-ms-transform: rotate(-90deg);
+
+	/* Opera */
+	-o-transform: rotate(-90deg);
+
+	/* Internet Explorer */
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+label#stageRightLabel{
+	position: absolute;
+	margin: 0;
+	left:-10px;
+	top:45%;
+	/* Safari */
+	-webkit-transform: rotate(90deg);
+	/* Firefox */
+	-moz-transform: rotate(90deg);
+
+	/* IE */
+	-ms-transform: rotate(90deg);
+
+	/* Opera */
+	-o-transform: rotate(90deg);
+
+	/* Internet Explorer */
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+
+#preview{
+	position: absolute;
+	background-color: white;
+	right:0px;
+	top:0px;
+	width: 100px;
+	height:100%;
+	border-left: 1px solid #b7b9bd;
+	font-weight: bolder;
+	text-align: center;
+}
+
+#delete-container {
+	/*background-color: white;*/
+    position:absolute;
+    bottom:0px;
+    right: 0px;
+    /*border: 1px solid #b7b9bd;*/
+    border-bottom: none;
+    border-right:none;
+    height:50px;
+    width:60px;
+    /*line-height: 75px;*/
+    text-align: center;
+    font-size: 15px;
+    background:transparent url('../img/trash-close.png') center top no-repeat;
+}
+
+#delete-container:hover{
+	background:transparent url('../img/trash-open.png') center top no-repeat;
+}
+
+/*#delete-container a{
+	display: block;
+	height: 100%;
+	width: 100%;
+}*/
+
+/*#delete-container a:hover{
+	background-color:#e5e2e2;
+	color:black;
+
+	}*/
+
+
+
+/**************** modal form for stages *****************/
+ul#stages{
+	padding:none;
+	margin:0;
+}
+
+ul#stages li{
+	border:none;
+}
+li.stage-selected > img {
+    border:1px solid blue;
+}
+
+#stages li {
+    display: inline-block;
+    cursor: pointer;
+}
+
+#stages img {
+    padding: 3px;
+    width:130px;
+    height:130px;
+    box-sizing:border-box;
+}

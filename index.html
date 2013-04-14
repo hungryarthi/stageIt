@@ -1,1 +1,104 @@
-StageIt Github page
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>StageIt</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+	<div id="outerWrapper">
+		<div id="topnavWrapper">
+			<div id="topnav">
+				<div id="stageItLogo"><h2>StageIt</h2></div>
+				<ul id="topNavAccount">
+					<li class="first"><a id="home" href="#" >Home</a></li>
+					<li><a id="account" href="#">Account</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="wrapper">
+			<div id="subHeader">
+				<div id="pageTitle"><h1><a id="projectName" data-toggle="tooltip" title="Double click to change">Project Name</a></h1></div>
+				<ul id="pageActionsNav">
+					<li><a id="addFormation"><img src="img/plus_blue.png" class="img-nav"/> New</a></li>
+					<li><a id="undo"><img src="img/arrow_undo.png" class="img-nav"/> Undo</a></li>
+					<li><a id="redo"><img src="img/arrow_redo.png" class="img-nav" /> Redo</a></li>
+					<li><a id="save"><img src="img/save.png" class="img-nav"/> Save</a></li>
+				</ul>
+				<div class="break"></div>
+			</div>
+			<div id="content">
+				<div id="sidebarActions">
+					<!-- <div id="tasks">Tasks</div> -->
+					<a id="editStage"><label>Edit Stage</label></a>
+					<a id="addDancers"><label>Add Dancers</label></a>
+					<a id="addProps"><label>Add Props</label></a>
+					<a id="extraTools"><label>Extra Tools</label></a>
+					<div id="comments"><label id="commentsLabel">Comments</label><textarea class="input-small"></textarea></div>
+				</div>
+				<div id="canvasWrapper">
+					<div id="canvas-container">
+						<label id="audienceLabel">Audience</label>
+<!-- 						<label id="stageLeftLabel">Stage Left</label>
+						<label id="stageRightLabel">Stage Right</label> -->
+						<canvas id="canvas-stage"><p>Your browser does not support HTML5 canvas</canvas>
+
+					</div>
+					<div id="delete-container" class="content"><a></a></div>
+					<!-- <div id="preview"><label>Preview</label></div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+		<!-- Stage Modal -->
+	<div id="chooseStage" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="chooseStageLabel" aria-hidden="false" data-backdrop="static">
+	  <div class="modal-header">
+	    <button type="button" class="close" data-dismiss="modal" aria-hidden="false"><i class="icon-remove"></i></button>
+	    <h4 id="chooseStageLabel">Select a stage</h4>
+	  </div>
+	  <div class="modal-body">
+	    <!-- <button id="stage1" class="btn">Stage 1</button> -->
+	    <ul id="stages">
+		    <li id="rectangle"><img  alt="rectangle stage" /></li>
+		    <li id="semicircle"><img  alt="semicircle stage" /></li>
+		</ul>
+	  </div>
+	   <div class="modal-footer">
+	   	<p id="stageHelper" style="display:none;color:red" class="pull-left">Please select a stage.</p>
+	  	<button class="btn btn-primary" onclick="drawStage()">Ok</button>
+	    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+	    
+	  </div>
+	</div>
+	<!-- AddDancers modal -->
+	<div id="addDancersModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="addDancersLabel" aria-hidden="false">
+	  <div class="modal-header">
+	    <button type="button" class="close" data-dismiss="modal" aria-hidden="false"><i class="icon-remove"></i></button>
+	    <h4 id="addDancersLabel">Add Dancers</h4>
+	  </div>
+	  <div class="modal-body">
+	    <p>Some stuff here</p>
+	  </div>
+	   <div class="modal-footer">
+	  	<button class="btn btn-primary">Add</button>
+	    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+	    
+	  </div>
+	</div>
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/javascript.js"></script>
+	<script>
+	var debug = true;
+	(function(){
+		if(!debug){
+		$('#chooseStage').modal();
+	}
+		$('#projectName').tooltip();
+	})();
+	
+	</script>
+</body>
+</html>
