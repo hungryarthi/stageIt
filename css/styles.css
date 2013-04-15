@@ -232,6 +232,8 @@ label#commentsLabel{
 	border:1px solid gray;
 	border-left: none;
 	box-sizing:border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 	position: relative;
 }
 
