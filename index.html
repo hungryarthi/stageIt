@@ -38,7 +38,6 @@
 					<tr><td><a id="addDancers"><label>Add Dancers</label></a></td></tr>
 					<tr class="last"><td><a id="addProps"><label>Add Props</label></a></td></tr>
 					<tr><td><a id="arrangeDancers"><label>Arrange Dancers</label></a></td></tr>
-	<!-- 				<tr><td><a id="extraTools"><label>Extra Tools</label></a></td></tr> -->
 					<!-- <div id="comments"><label id="commentsLabel">Comments</label><textarea class="input-small"></textarea></div> -->
 				</table></div>
 				<div class="labelContainer">
@@ -105,8 +104,7 @@
 	  </div>
 	</div>
 
-	<!--- addProp modal -->
-		
+	<!--- addProp modal -->	
 	<div id="choosePropModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="choosePropLabel" aria-hidden="false" data-backdrop="static">
 	  <div class="modal-header">
 	    <button type="button" class="close" data-dismiss="modal" aria-hidden="false"><i class="icon-remove"></i></button>
@@ -125,6 +123,7 @@
 	    
 	  </div>
 	</div>
+
 	<script src="js/jquery-1.9.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/javascript.js"></script>
@@ -133,9 +132,6 @@
 	var stageHasBeenPicked = false;
 	(function(){
 		if(!debug){
-			if (!stageHasBeenPicked){
-
-			}
 		$('#chooseStage').modal();
 	}
 		$('#projectName').tooltip();
