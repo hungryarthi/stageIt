@@ -2,6 +2,10 @@ $('#stages li').click(function(){
     $(this).addClass('stage-selected').siblings().removeClass('stage-selected');
 });
 
+$('#props li').click(function(){
+    $(this).addClass('prop-selected').siblings().removeClass('prop-selected');
+});
+
 $('#editStage').click(function(){
 	$('#chooseStage').modal();
 
@@ -11,12 +15,24 @@ $('#editStage').click(function(){
 $('#chooseStage').on('hidden', function(){
 	$('#stages li').removeClass('stage-selected');
 	$('#stageHelper').css("display", "none");
+	$('.hidden').css("display", "inline");
+});
+
+$('#choosePropModal').on('hidden', function(){
+	$('#props li').removeClass('prop-selected');
+	$('#propHelper').css("display", "none");
 })
 
 //shows the dancer modal
 $('#addDancers').click(function(){
 	$('#addDancersModal').modal();
 });
+
+
+$('#addProps').click(function(){
+
+	$('#choosePropModal').modal();
+})
 
 //close stage modal dialog
 function closeStageDialog() {

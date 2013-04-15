@@ -26,17 +26,33 @@
 					<li><a id="redo"><img src="img/arrow_redo.png" class="img-nav" /> Redo</a></li>
 					<li><a id="save"><img src="img/save.png" class="img-nav"/> Save</a></li>
 				</ul>
-				<div class="break"></div>
+				
 			</div>
 			<div id="content">
 				<div id="sidebarActions">
-					<!-- <div id="tasks">Tasks</div> -->
-					<a id="editStage"><label>Edit Stage</label></a>
-					<a id="addDancers"><label>Add Dancers</label></a>
-					<a id="addProps"><label>Add Props</label></a>
-					<a id="extraTools"><label>Extra Tools</label></a>
-					<div id="comments"><label id="commentsLabel">Comments</label><textarea class="input-small"></textarea></div>
-				</div>
+					<div class="labelContainer">
+					<label><h5>Tasks</h5></label></div>
+					<div id="tasks-container">
+					<table id="tasks">
+					<tr><td><a id="editStage"><label>Edit Stage</label></a></td></tr>
+					<tr><td><a id="addDancers"><label>Add Dancers</label></a></td></tr>
+					<tr class="last"><td><a id="addProps"><label>Add Props</label></a></td></tr>
+					<tr><td><a id="arrangeDancers"><label>Arrange Dancers</label></a></td></tr>
+					<!-- <div id="comments"><label id="commentsLabel">Comments</label><textarea class="input-small"></textarea></div> -->
+				</table></div>
+				<div class="labelContainer">
+				<label><h5>Formations</h5></label>
+			</div>
+				<div id="formations-container">
+				<table id="formations">
+					<tr><td><a>Formation 1</a></td></tr>
+				</table>
+			</div>
+			<div class="labelContainer">
+			<label><h5>Tools</h5></label>
+		</div>
+				</div><!-- end of sidebar -->
+
 				<div id="canvasWrapper">
 					<div id="canvas-container">
 						<label id="audienceLabel">Audience</label>
@@ -55,7 +71,7 @@
 		<!-- Stage Modal -->
 	<div id="chooseStage" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="chooseStageLabel" aria-hidden="false" data-backdrop="static">
 	  <div class="modal-header">
-	    <button type="button" class="close" data-dismiss="modal" aria-hidden="false"><i class="icon-remove"></i></button>
+	    <button type="button" class="close hidden" data-dismiss="modal" aria-hidden="false" style="display:none"><i class="icon-remove"></i></button>
 	    <h4 id="chooseStageLabel">Select a stage</h4>
 	  </div>
 	  <div class="modal-body">
@@ -68,7 +84,7 @@
 	   <div class="modal-footer">
 	   	<p id="stageHelper" style="display:none;color:red" class="pull-left">Please select a stage.</p>
 	  	<button class="btn btn-primary" onclick="drawStage()">Ok</button>
-	    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+	    <button class="btn hidden" data-dismiss="modal" aria-hidden="true" id="cancel" style="display:none">Cancel</button>
 	    
 	  </div>
 	</div>
@@ -87,11 +103,33 @@
 	    
 	  </div>
 	</div>
+
+	<!--- addProp modal -->	
+	<div id="choosePropModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="choosePropLabel" aria-hidden="false" data-backdrop="static">
+	  <div class="modal-header">
+	    <button type="button" class="close" data-dismiss="modal" aria-hidden="false"><i class="icon-remove"></i></button>
+	    <h4 id="choosePropLabel">Select a prop</h4>
+	  </div>
+	  <div class="modal-body">
+	    <ul id="props">
+		    <li id="prop1"><img  alt="prop1" /></li>
+		    <li id="prop2"><img  alt="prop2" /></li>
+		</ul>
+	  </div>
+	   <div class="modal-footer">
+	   	<p id="propHelper" style="display:none;color:red" class="pull-left">Please select a prop.</p>
+	  	<button class="btn btn-primary" data-dismiss="modal">Ok</button>
+	    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+	    
+	  </div>
+	</div>
+
 	<script src="js/jquery-1.9.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/javascript.js"></script>
 	<script>
 	var debug = true;
+	var stageHasBeenPicked = false;
 	(function(){
 		if(!debug){
 		$('#chooseStage').modal();
