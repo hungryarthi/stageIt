@@ -20,7 +20,13 @@ a:hover, a:visited{
 img{
 	margin-top: -5px;
 	padding-right: 5px;
-	width:15px;
+	width: 15px;
+}
+
+img #addIcon{
+	padding: 5px;
+	width: 200px;
+	height: 200px;
 }
 
 label{

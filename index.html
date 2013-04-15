@@ -82,10 +82,17 @@
 	    <p>Some stuff here</p>
  
 		<p>
-		  <img src="img/Ohms2012.png"/>
-		  <label for="spinner">Select a valu:</label>
-		  <input id="spinner" name="value" width="6000px" />
+		  <img src="ballet_dancer1.png" class="addIcon"/>
+		  <label for="spinner">Number of Dancers to Add:</label>
+		  <input id="spinner" name="value"></input>
 		</p>
+
+		<!-- //Work on adding PROPS
+		<p>
+		  <img src="dancer1.jpg" class="addIcon"/>
+		  <label for="spinner">Number of Props to Add:</label>
+		  <input id="spinner" name="value"></input>
+		</p> -->
 
 		<p>
 		  <button id="disable">Toggle disable/enable</button>
@@ -113,7 +120,12 @@
 
 		$(function() {
 	    var spinner = $( "#spinner" ).spinner();
-	 
+	    spinner.value = 0;
+	    spinner.constraints = {min:0, places:0};
+	    spinner.constraints.min = 0;
+	    spinner.constraints.places = 0;
+	    spinner.style = "width:10px";
+
 	    $( "#disable" ).click(function() {
 	    	console.log("disable clicked");
 	      if ( spinner.spinner( "option", "disabled" ) ) {
